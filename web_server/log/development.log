@@ -18,3 +18,654 @@ NameError (uninitialized constant UsersController::User):
 Rendered rescues/_trace (27.0ms)
 Rendered rescues/_request_and_response (0.2ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:08:40) [GET]
+
+NoMethodError (undefined method `attr_accessors' for User:Class):
+  app/models/user.rb:2
+  app/controllers/users_controller.rb:3:in `index'
+
+Rendered rescues/_trace (81.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:09:29) [GET]
+
+NoMethodError (undefined method `attr_accessors' for User:Class):
+  app/models/user.rb:2
+  app/controllers/users_controller.rb:3:in `index'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:09:33) [GET]
+
+NoMethodError (undefined method `multiple' for User:Class):
+  app/models/user.rb:13:in `all'
+  app/controllers/users_controller.rb:3:in `index'
+
+Rendered rescues/_trace (94.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:10:01) [GET]
+Rendering users/index
+
+ActionView::TemplateError (undefined method `title' for #<ActionView::Base:0x1036a5d70>) on line #1 of app/views/users/index.html.erb:
+1: <% title "Users" %>
+2: 
+3: <table>
+4:   <tr>
+
+    app/views/users/index.html.erb:1
+
+Rendered rescues/_trace (29.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:10:50) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 101ms (View: 73, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:11:51) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 35ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:11:52) [GET]
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `errors' for #<User:0x1034fade0 @id=nil, @name=nil>) on line #2 of app/views/users/_form.html.erb:
+1: <% form_for @user do |f| %>
+2:   <%= f.error_messages %>
+3:   <p>
+4:     <%= f.label :name %><br />
+5:     <%= f.text_field :name %>
+
+    app/views/users/_form.html.erb:2
+    app/views/users/_form.html.erb:1
+    app/views/users/new.html.erb:3
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:12:15) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:12:20) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x1037374f0>", "user"=>{"name"=>"kike"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1037374f0>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:13:44) [GET]
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `user' for #<User:0x1031ac2b0 @id=14, @name="sarcilav">) on line #10 of app/views/users/index.html.erb:
+7:   <% for user in @users %>
+8:     <tr>
+9:       <td><%=h user.name %></td>
+10:       <td><%= link_to "Show", user %></td>
+11:       <td><%= link_to "Edit", edit_user_path(user) %></td>
+12:       <td><%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></td>
+13:     </tr>
+
+    app/models/user.rb:8:in `to_param'
+    generated code (actionpack (2.3.8) lib/action_controller/routing/route.rb:160):5:in `generate_raw'
+    (eval):17:in `user_path'
+    app/views/users/index.html.erb:10
+    app/views/users/index.html.erb:7:in `each'
+    app/views/users/index.html.erb:7
+
+Rendered rescues/_trace (95.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:14:16) [GET]
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (can't convert Fixnum into String) on line #10 of app/views/users/index.html.erb:
+7:   <% for user in @users %>
+8:     <tr>
+9:       <td><%=h user.name %></td>
+10:       <td><%= link_to "Show", user %></td>
+11:       <td><%= link_to "Edit", edit_user_path(user) %></td>
+12:       <td><%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></td>
+13:     </tr>
+
+    generated code (actionpack (2.3.8) lib/action_controller/routing/route.rb:160):6:in `generate_raw'
+    (eval):17:in `user_path'
+    app/views/users/index.html.erb:10
+    app/views/users/index.html.erb:7:in `each'
+    app/views/users/index.html.erb:7
+
+Rendered rescues/_trace (98.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:14:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 33ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:14:31) [GET]
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (user_url failed to generate from {:controller=>"users", :action=>"show", :id=>#<User:0x103547d20 @id=nil, @name=nil>}, expected: {:controller=>"users", :action=>"show"}, diff: {:id=>#<User:0x103547d20 @id=nil, @name=nil>}) on line #1 of app/views/users/_form.html.erb:
+1: <% form_for @user do |f| %>
+2: 
+3:   <p>
+4:     <%= f.label :name %><br />
+
+    (eval):17:in `user_path'
+    app/views/users/_form.html.erb:1
+    app/views/users/new.html.erb:3
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:16:34) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.2ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:16:37) [GET]
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `fixnum_path' for #<ActionView::Base:0x103694ea8>) on line #10 of app/views/users/index.html.erb:
+7:   <% for user in @users %>
+8:     <tr>
+9:       <td><%=h user.name %></td>
+10:       <td><%= link_to "Show", user.id %></td>
+11:       <td><%= link_to "Edit", edit_user_path(user.id) %></td>
+12:       <td><%= link_to "Destroy", user.id, :confirm => 'Are you sure?', :method => :delete %></td>
+13:     </tr>
+
+    app/views/users/index.html.erb:10
+    app/views/users/index.html.erb:7:in `each'
+    app/views/users/index.html.erb:7
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:17:20) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 87ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 12:17:22) [GET]
+
+ActionController::RoutingError (No route matches "/14" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:18:14) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 34ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:18:16) [GET]
+  Parameters: {"id"=>"14"}
+Rendering template within layouts/application
+Rendering users/show
+Completed in 29ms (View: 5, DB: 0) | 200 OK [http://localhost/users/14]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 12:18:19) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"14"}
+
+NoMethodError (undefined method `destroy' for #<User:0x103296ab8 @id="14", @name="sarcilav">):
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:19:19) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 94ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 12:19:23) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA="}
+
+ActionController::RoutingError (No route matches "/14" with {:method=>:delete}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:19:31) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 32ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 12:20:40) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA="}
+
+ActionController::RoutingError (No route matches "/14" with {:method=>:delete}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:21:46) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 34ms (View: 9, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:21:46) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 33ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:21:47) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 34ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:21:48) [GET]
+  Parameters: {"id"=>"14"}
+Rendering template within layouts/application
+Rendering users/show
+Completed in 29ms (View: 6, DB: 0) | 200 OK [http://localhost/users/14]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:21:53) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.4ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:21:55) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x103673fa0>", "user"=>{"name"=>"kike"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x103673fa0>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (26.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:22:47) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:22:49) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x10318f3e0>", "user"=>{"name"=>"kike"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x10318f3e0>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (27.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:22:52) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 31ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:22:53) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 32ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:22:53) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 89ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:22:54) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:22:56) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x103035058>", "user"=>{"name"=>"kike"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x103035058>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (26.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:23:16) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:23:16) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.8ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:23:18) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x10328df08>", "user"=>{"name"=>"kike"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x10328df08>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (88.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:24:43) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:24:49) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x1036636c8>", "user"=>{"name"=>"kike1"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1036636c8>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:25:05) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 34ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:25:07) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (62.8ms)
+Completed in 66ms (View: 64, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:25:11) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x1030282b8>", "user"=>{"name"=>"keik"}}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1030282b8>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:23:in `update'
+
+Rendered rescues/_trace (27.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:26:00) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:26:01) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x1032e15e0>", "user"=>{"name"=>"keik"}}
+Redirected to http://localhost:3000/users/%23%3CUser:0x1031a4560%3E
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/%23%3CUser:0x1032e15e0%3E]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:26:01) [GET]
+  Parameters: {"id"=>"#<User:0x1031a4560>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1031a4560>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:7:in `show'
+
+Rendered rescues/_trace (90.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:26:52) [GET]
+  Parameters: {"id"=>"#<User:0x1031a4560>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1031a4560>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:7:in `show'
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:26:56) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x1032e15e0>", "user"=>{"name"=>"keik1"}}
+Redirected to http://localhost:3000/users/%23%3CUser:0x103174c48%3E
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/users/%23%3CUser:0x1032e15e0%3E]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:26:56) [GET]
+  Parameters: {"id"=>"#<User:0x103174c48>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x103174c48>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:7:in `show'
+
+Rendered rescues/_trace (94.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 12:27:03) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-11-06 12:27:09) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"#<User:0x103570bf8>", "user"=>{"name"=>"123"}}
+Redirected to http://localhost:3000/users/%23%3CUser:0x1033898f8%3E
+Completed in 27ms (DB: 0) | 302 Found [http://localhost/users/%23%3CUser:0x103570bf8%3E]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 12:27:09) [GET]
+  Parameters: {"id"=>"#<User:0x1033898f8>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /users/#<User:0x1033898f8>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/user.rb:13:in `getUser'
+  app/models/user.rb:17:in `find'
+  app/controllers/users_controller.rb:7:in `show'
+
+Rendered rescues/_trace (27.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:27:54) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 38ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 12:28:04) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"21"}
+Redirected to http://localhost:3000/users
+Completed in 48ms (DB: 0) | 302 Found [http://localhost/users/21]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:28:04) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 96ms (View: 9, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 12:28:11) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"20"}
+Redirected to http://localhost:3000/users
+Completed in 51ms (DB: 0) | 302 Found [http://localhost/users/20]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:28:11) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 37ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 12:28:16) [DELETE]
+  Parameters: {"authenticity_token"=>"XQjWxcrKiMJdaMeIXHfsrByuamGhP2jLmdWk0M08BsA=", "id"=>"18"}
+Redirected to http://localhost:3000/users
+Completed in 49ms (DB: 0) | 302 Found [http://localhost/users/18]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 12:28:17) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 87ms (View: 6, DB: 0) | 200 OK [http://localhost/users]
