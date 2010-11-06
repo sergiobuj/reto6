@@ -1,0 +1,16 @@
+<% title "Message" %>
+
+<p>
+  <strong>Owner:</strong>
+  <%=h @message.owner %>
+</p>
+<p>
+  <strong>Msg:</strong>
+  <%=h @message.msg %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_message_path(@message) %> |
+  <%= link_to "Destroy", @message, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", messages_path %>
+</p>

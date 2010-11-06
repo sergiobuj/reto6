@@ -1,0 +1,10 @@
+# Logfile created on Sat Nov 06 08:59:41 -0500 2010
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 10:20:01) [GET]
+
+NameError (uninitialized constant UsersController::User):
+  app/controllers/users_controller.rb:3:in `index'
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)

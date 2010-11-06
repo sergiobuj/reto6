@@ -1,0 +1,477 @@
+# Logfile created on Sat Nov 06 08:59:27 -0500 2010  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20101106141033)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "msg" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101106141033')[0m
+Migrating to CreateUsers (20101106141059)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101106141059')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:14:35) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 23ms (View: 3, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 09:14:45) [GET]
+
+ActionController::RoutingError (No route matches "/user/create.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 09:14:54) [GET]
+
+ActionController::RoutingError (No route matches "/user/new.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new to xml (for 127.0.0.1 at 2010-11-06 09:15:37) [GET]
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/new.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:18:33) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:18:33', '2010-11-06 14:18:33')[0m
+Completed in 32ms (View: 24, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:18:50) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:19:21) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:19:21', '2010-11-06 14:19:21')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:19:33) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing UsersController#new to xml (for 127.0.0.1 at 2010-11-06 09:19:46) [GET]
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/users/new.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:20:20) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:20:20', '2010-11-06 14:20:20')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 09:21:10) [POST]
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  
+
+Rendered rescues/_trace (73.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-06 09:21:45) [POST]
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  
+
+Rendered rescues/_trace (20.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:22:06) [POST]
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:22:06', '2010-11-06 14:22:06')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:22:23) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:22:23', '2010-11-06 14:22:23')[0m
+Completed in 11ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:22:31) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:22:33) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing UsersController#index to xml (for 127.0.0.1 at 2010-11-06 09:22:33) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:22:46) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:22:46', '2010-11-06 14:22:46')[0m
+Completed in 10ms (View: 2, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:17) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 50ms (View: 46, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:27) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM "users" WHERE "id" = 1[0m
+Redirected to http://localhost:8080/users
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/users/1]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:27) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:30) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 2[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/2]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:30) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 73ms (View: 9, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:31) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"3"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM "users" WHERE "id" = 3[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/3]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:31) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:32) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"4"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 4[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/4]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:32) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 09:23:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=4):
+  app/controllers/users_controller.rb:16:in `show'
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:38) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"5"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 5[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/5]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:38) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:23:39) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"6"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM "users" WHERE "id" = 6[0m
+Redirected to http://localhost:8080/users
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/users/6]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:23:39) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 09:23:40) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-06 09:23:43) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "user"=>{"name"=>"s"}}
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('s', '2010-11-06 14:23:43', '2010-11-06 14:23:43')[0m
+Redirected to http://localhost:8080/users/7
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 09:23:43) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/users/7]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:24:26) [POST]
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:24:26', '2010-11-06 14:24:26')[0m
+Completed in 71ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:26:38) [POST]
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:26:38', '2010-11-06 14:26:38')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:27:05) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:27:07) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:27:11) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"8"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 8[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/8]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:27:11) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 09:27:13) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"9"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;35;1mUser Destroy (0.3ms)[0m   [0mDELETE FROM "users" WHERE "id" = 9[0m
+Redirected to http://localhost:8080/users
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/users/9]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:27:13) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:28:41) [POST]
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:28:41', '2010-11-06 14:28:41')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:29:47) [POST]
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:29:47', '2010-11-06 14:29:47')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:31:31) [POST]
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES(NULL, '2010-11-06 14:31:31', '2010-11-06 14:31:31')[0m
+Completed in 10ms (View: 1, DB: 1) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:32:34) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "user"=>{"name"=>"sarcilav"}}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (25.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:33:13) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"name"=>"sarcilav"}}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (90.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-06 09:33:25) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-06 09:33:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "user"=>{"name"=>"s"}}
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('s', '2010-11-06 14:33:27', '2010-11-06 14:33:27')[0m
+Redirected to http://localhost:8080/users/13
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-06 09:33:27) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/users/13]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:33:56) [POST]
+  Parameters: {"commit"=>"Create", "user"=>{"name"=>"sarcilav"}}
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('sarcilav', '2010-11-06 14:33:56', '2010-11-06 14:33:56')[0m
+Completed in 9ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:34:08) [POST]
+  Parameters: {"user"=>{"name"=>"sarcilav"}}
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('sarcilav', '2010-11-06 14:34:08', '2010-11-06 14:34:08')[0m
+Completed in 9ms (View: 1, DB: 1) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:34:15) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create to xml (for 127.0.0.1 at 2010-11-06 09:34:27) [POST]
+  Parameters: {"user"=>{"name"=>"sergiobuj"}}
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('sergiobuj', '2010-11-06 14:34:27', '2010-11-06 14:34:27')[0m
+Completed in 10ms (View: 1, DB: 0) | 201 Created [http://localhost/users.xml]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 09:34:30) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 10:11:41) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"7"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 7[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/7]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 10:11:41) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 10:11:43) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"10"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM "users" WHERE "id" = 10[0m
+Redirected to http://localhost:8080/users
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/users/10]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 10:11:43) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 10:11:46) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"11"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Destroy (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 11[0m
+Redirected to http://localhost:8080/users
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/users/11]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 10:11:46) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 69ms (View: 65, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#destroy (for 127.0.0.1 at 2010-11-06 10:11:49) [DELETE]
+  Parameters: {"authenticity_token"=>"YY5XJgWsw9HBJRlR+BtRmYW24HSndJY9/65vBuKSyjg=", "id"=>"12"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Destroy (0.2ms)[0m   [0mDELETE FROM "users" WHERE "id" = 12[0m
+Redirected to http://localhost:8080/users
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/users/12]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-06 10:11:49) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-06 10:18:26) [GET]
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" [0m
+Completed in 18ms (View: 3, DB: 0) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#new to xml (for 127.0.0.1 at 2010-11-06 10:18:32) [GET]
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/new.xml]
