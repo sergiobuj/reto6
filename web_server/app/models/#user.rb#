@@ -1,0 +1,25 @@
+class User
+  attr_accessors :name, :id
+  def initialize(attr = {})
+    @name = attr["name"]
+    @id = attr["id"]
+  end
+
+  def self.create(name)
+    single(API::login(name))
+  end
+  
+  def all(
+  protected
+  def single(answer)
+    status = answer.response.code.to_i
+    if status >= 200 and status < 300
+      return User.new(answer.parsed_response["user"])
+    else
+      raise Exception.new("Problem to load single user instance, messges #{answer.response.code} #{answer.response.code_type}")
+    end
+  end
+  def multiple
+    
+  end
+end
