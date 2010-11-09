@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   def index
     @messages = Message.all
   end
@@ -12,7 +13,9 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(params[:message, :owner])
+    post("/messages.xml", :body => { "message" => { "user_id" => :owner , "msg" => :message} })
+
     if @message.save
       flash[:notice] = "Successfully created message."
       redirect_to @message
