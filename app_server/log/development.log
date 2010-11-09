@@ -6653,3 +6653,13 @@ Processing MessagesController#create to xml (for 127.0.0.1 at 2010-11-08 22:39:0
   Parameters: {"message"=>{"msg"=>"o", "user_id"=>"1"}}
   [4;35;1mMessage Create (0.3ms)[0m   [0mINSERT INTO "messages" ("msg", "created_at", "updated_at", "user_id") VALUES('o', '2010-11-09 03:39:07', '2010-11-09 03:39:07', 1)[0m
 Completed in 12ms (View: 2, DB: 0) | 201 Created [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:24:43) [GET]
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 35ms (View: 23, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:26:54) [GET]
+  [4;35;1mMessage Load (1.0ms)[0m   [0mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/messages.xml]

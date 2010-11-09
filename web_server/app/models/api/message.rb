@@ -9,5 +9,8 @@ module API
       post("/messages.xml", :body => { "message" => { "msg" => message, "user-id" => owner } })
     end
     
+    def self.all
+      get("/messages.xml")
+    end
   end
 end

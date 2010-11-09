@@ -3643,3 +3643,63 @@ The error occurred while evaluating nil.each) on line #8 of app/views/messages/i
 Rendered rescues/_trace (107.9ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:00:54) [GET]
+
+NameError (uninitialized constant MessagesController::Message):
+  app/controllers/messages_controller.rb:4:in `index'
+
+Rendered rescues/_trace (51.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:04:55) [GET]
+
+NoMethodError (undefined method `all' for Message:Class):
+  app/controllers/messages_controller.rb:4:in `index'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:24:43) [GET]
+
+NameError (uninitialized constant Message::Messages):
+  app/models/message.rb:30:in `multiple'
+  app/models/message.rb:29:in `each'
+  app/models/message.rb:29:in `multiple'
+  app/models/message.rb:13:in `all'
+  app/controllers/messages_controller.rb:4:in `index'
+
+Rendered rescues/_trace (49.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:26:54) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 261ms (View: 83, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#new (for 127.0.0.1 at 2010-11-08 23:26:57) [GET]
+Rendering template within layouts/application
+Rendering messages/new
+
+ActionView::TemplateError (undefined method `errors' for #<Message:0x232c31c @owner=nil, @msg=nil>) on line #2 of app/views/messages/_form.html.erb:
+1: <% form_for @message do |f| %>
+2:   <%= f.error_messages %>
+3:   <p>
+4:     <%= f.label :owner %><br />
+5:     <%= f.text_field :owner %>
+
+    app/views/messages/_form.html.erb:2
+    app/views/messages/_form.html.erb:1
+    app/views/messages/new.html.erb:3
+
+Rendered rescues/_trace (179.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
