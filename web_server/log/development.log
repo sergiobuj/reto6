@@ -3703,3 +3703,194 @@ ActionView::TemplateError (undefined method `errors' for #<Message:0x232c31c @ow
 Rendered rescues/_trace (179.0ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#destroy (for 127.0.0.1 at 2010-11-08 23:46:32) [DELETE]
+  Parameters: {"authenticity_token"=>"04GGLYE0CFS0Kr0FWyaUHJo+GWZrPcCkQAn9PEheqnU=", "id"=>"#<Message:0x2467628>"}
+
+NoMethodError (undefined method `find' for Message:Class):
+  app/controllers/messages_controller.rb:42:in `destroy'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:49:15) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 227ms (View: 66, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#destroy (for 127.0.0.1 at 2010-11-08 23:49:18) [DELETE]
+  Parameters: {"authenticity_token"=>"04GGLYE0CFS0Kr0FWyaUHJo+GWZrPcCkQAn9PEheqnU=", "id"=>"#<Message:0x239b320>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /messages/#<Message:0x239b320>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/message.rb:17:in `find'
+  app/models/message.rb:10:in `find'
+  app/controllers/messages_controller.rb:42:in `destroy'
+
+Rendered rescues/_trace (152.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#new (for 127.0.0.1 at 2010-11-08 23:49:31) [GET]
+Rendering template within layouts/application
+Rendering messages/new
+
+ActionView::TemplateError (undefined method `errors' for #<Message:0x25574d4 @id=nil, @owner=nil, @msg=nil>) on line #2 of app/views/messages/_form.html.erb:
+1: <% form_for @message do |f| %>
+2:   <%= f.error_messages %>
+3:   <p>
+4:     <%= f.label :owner %><br />
+5:     <%= f.text_field :owner %>
+
+    app/views/messages/_form.html.erb:2
+    app/views/messages/_form.html.erb:1
+    app/views/messages/new.html.erb:3
+
+Rendered rescues/_trace (73.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:50:26) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 250ms (View: 172, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-11-08 23:50:28) [GET]
+  Parameters: {"id"=>"#<Message:0x22de93c>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /messages/#<Message:0x22de93c>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/message.rb:17:in `find'
+  app/models/message.rb:10:in `find'
+  app/controllers/messages_controller.rb:8:in `show'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-11-08 23:51:52) [GET]
+  Parameters: {"id"=>"#<Message:0x22de93c>"}
+
+URI::InvalidURIError (bad URI(is not URI?): /messages/#<Message:0x22de93c>.xml):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:436:in `split'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:485:in `parse'
+  httparty (0.6.1) lib/httparty/request.rb:27:in `path='
+  httparty (0.6.1) lib/httparty/request.rb:18:in `initialize'
+  httparty (0.6.1) lib/httparty.rb:280:in `new'
+  httparty (0.6.1) lib/httparty.rb:280:in `perform_request'
+  httparty (0.6.1) lib/httparty.rb:232:in `get'
+  app/models/api/message.rb:17:in `find'
+  app/models/message.rb:10:in `find'
+  app/controllers/messages_controller.rb:8:in `show'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:55:08) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 240ms (View: 165, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:55:26) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 127ms (View: 53, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:55:28) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 124ms (View: 53, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#destroy (for 127.0.0.1 at 2010-11-08 23:55:30) [DELETE]
+  Parameters: {"authenticity_token"=>"04GGLYE0CFS0Kr0FWyaUHJo+GWZrPcCkQAn9PEheqnU=", "id"=>"18973400"}
+
+Exception (Problem to load single message instance, message 404 Net::HTTPNotFound):
+  app/models/message.rb:28:in `single'
+  app/models/message.rb:10:in `find'
+  app/controllers/messages_controller.rb:24:in `destroy'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:56:28) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 127ms (View: 54, DB: 0) | 200 OK [http://localhost/messages/]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-11-08 23:57:09) [GET]
+  Parameters: {"id"=>"17626210"}
+
+Exception (Problem to load single message instance, message 404 Net::HTTPNotFound):
+  app/models/message.rb:28:in `single'
+  app/models/message.rb:10:in `find'
+  app/controllers/messages_controller.rb:8:in `show'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#new (for 127.0.0.1 at 2010-11-08 23:57:13) [GET]
+Rendering template within layouts/application
+Rendering messages/new
+Rendered messages/_form (7.8ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/messages/new]
+
+
+Processing MessagesController#update (for 127.0.0.1 at 2010-11-08 23:57:20) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"04GGLYE0CFS0Kr0FWyaUHJo+GWZrPcCkQAn9PEheqnU=", "id"=>"#<Message:0x2514ef4>", "message"=>{"msg"=>"hola mundo", "owner"=>"1"}}
+
+ActionController::UnknownAction (No action responded to update. Actions: create, destroy, edit, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:57:25) [GET]
+Rendering template within layouts/application
+Rendering messages/index
+Completed in 230ms (View: 55, DB: 0) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#new (for 127.0.0.1 at 2010-11-08 23:57:38) [GET]
+Rendering template within layouts/application
+Rendering messages/new
+Rendered messages/_form (6.8ms)
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/messages/new]
+
+
+Processing MessagesController#update (for 127.0.0.1 at 2010-11-08 23:57:47) [PUT]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"04GGLYE0CFS0Kr0FWyaUHJo+GWZrPcCkQAn9PEheqnU=", "id"=>"#<Message:0x22ddc1c>", "message"=>{"msg"=>"sebastian", "owner"=>"112"}}
+
+ActionController::UnknownAction (No action responded to update. Actions: create, destroy, edit, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)

@@ -10,7 +10,6 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_message_path(@message) %> |
-  <%= link_to "Destroy", @message, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Destroy", messages_path(@message.id), :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", messages_path %>
 </p>

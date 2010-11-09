@@ -3,8 +3,15 @@ class Message
   def initialize(attr = {})
     @msg = attr["msg"]
     @owner = attr["user_id"]
+    @id = attr["id"]
   end
 
+  def self.find(id)
+    single(API::Message.find(id))
+  end
+  def destroy
+    API::Message.destroy(@id)
+  end
   def self.create(message, owner)
     single(API::Message.create(message, owner))
   end

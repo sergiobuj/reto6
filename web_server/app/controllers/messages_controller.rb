@@ -13,29 +13,11 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @message = Message.new(params[:message, :owner])
-    post("/messages.xml", :body => { "message" => { "user_id" => :owner , "msg" => :message} })
-
-    if @message.save
-      flash[:notice] = "Successfully created message."
-      redirect_to @message
-    else
-      render :action => 'new'
-    end
+    @message = Message.create(params[:message])
   end
   
   def edit
     @message = Message.find(params[:id])
-  end
-  
-  def update
-    @message = Message.find(params[:id])
-    if @message.update_attributes(params[:message])
-      flash[:notice] = "Successfully updated message."
-      redirect_to @message
-    else
-      render :action => 'edit'
-    end
   end
   
   def destroy

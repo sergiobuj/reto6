@@ -6663,3 +6663,91 @@ Completed in 35ms (View: 23, DB: 1) | 200 OK [http://localhost/messages.xml]
 Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:26:54) [GET]
   [4;35;1mMessage Load (1.0ms)[0m   [0mSELECT * FROM "messages" [0m
 Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:49:15) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 107ms (View: 14, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:50:26) [GET]
+  [4;35;1mMessage Load (1.2ms)[0m   [0mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:55:08) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:55:26) [GET]
+  [4;35;1mMessage Load (1.0ms)[0m   [0mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:55:28) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#show to xml (for 127.0.0.1 at 2010-11-08 23:55:30) [GET]
+  Parameters: {"id"=>"18973400"}
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 18973400) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Message with ID=18973400):
+  app/controllers/messages_controller.rb:16:in `show'
+
+Rendered rescues/_trace (51.6ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:56:28) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-11-08 23:56:49) [GET]
+  [4;35;1mMessage Load (1.1ms)[0m   [0mSELECT * FROM "messages" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+
+ActionView::TemplateError (undefined method `owner' for #<Message:0x22bc878>) on line #11 of app/views/messages/index.html.erb:
+8: 
+9: <% @messages.each do |message| %>
+10:   <tr>
+11:     <td><%=h message.owner %></td>
+12:     <td><%=h message.msg %></td>
+13:     <td><%= link_to 'Show', message %></td>
+14:     <td><%= link_to 'Edit', edit_message_path(message) %></td>
+
+    app/views/messages/index.html.erb:11
+    app/views/messages/index.html.erb:9:in `each'
+    app/views/messages/index.html.erb:9
+    app/controllers/messages_controller.rb:7:in `index'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:56:53) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/messages.xml]
+
+
+Processing MessagesController#show to xml (for 127.0.0.1 at 2010-11-08 23:57:09) [GET]
+  Parameters: {"id"=>"17626210"}
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 17626210) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Message with ID=17626210):
+  app/controllers/messages_controller.rb:16:in `show'
+
+Rendered rescues/_trace (49.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#index to xml (for 127.0.0.1 at 2010-11-08 23:57:25) [GET]
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/messages.xml]

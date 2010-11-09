@@ -12,5 +12,12 @@ module API
     def self.all
       get("/messages.xml")
     end
+    
+    def self.find(id)
+      get("/messages/#{id}.xml")
+    end
+    def self.destroy(id)
+      delete("/messages/#{id}.xml")
+    end
   end
 end

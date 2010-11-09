@@ -3,6 +3,6 @@
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @message %> |
+  <%= link_to "Show", message_path(@message.id) %> |
   <%= link_to "View All", messages_path %>
 </p>
